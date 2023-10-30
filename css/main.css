@@ -1,0 +1,181 @@
+/****** Elad Shechter's RESET *******/
+
+/* box sizing border-box for all elements */
+*, *::before, *::after{ box-sizing: border-box; }
+
+a { text-decoration:none; color:inherit; cursor:pointer; }
+button {background-color:transparent; color:inherit; border-width:0; padding:0; cursor:pointer;}
+figure {margin:0;}
+input::-moz-focus-inner {border:0; padding:0; margin:0;}
+ul, ol, dd {margin:0; padding:0; list-style:none;}
+h1, h2, h3, h4, h5, h6 {margin:0; font-size:inherit; font-weight:inherit;}
+p {margin:0; }
+cite {font-style: normal;}
+fieldset {border-width:0; padding:0; margin:0;}
+
+input, textarea {
+    color: #777;
+    border: 1px solid #ccc;
+    border-radius: 3rem;
+    padding: 3rem;
+}
+
+html{
+    font-size: 1px; /*for using REM units*/
+    height: 100%;
+}
+
+/*--------------- Start --------------------*/
+
+
+body{
+    font-family:  sans-serif;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #333;
+    margin:0;
+    height: 100%;
+}
+
+h1 {font-size: 48rem;}
+h2 {font-size: 34rem;}
+h3 {font-size: 24rem;}
+p {font-size: 16rem;}
+
+.wrapper {margin: 0 auto; max-width: 1300px; width: 100%; padding: 0 20rem;}
+
+.hstr-site {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+}
+
+.hstr-header {
+    background-color: #95c146;
+    flex: 0 0 auto;
+    text-align: center;
+    padding: 24rem 0 0 0;
+    color: white;
+}
+
+.main-menu { margin-top: 20rem;
+    display: flex;
+    font-size: 20rem;
+    flex-wrap: wrap;
+
+}
+
+.menu-item {
+    margin-bottom: 30rem;
+}
+
+
+.menu-item a{
+    margin-right:20rem;
+    border:1px solid white;
+    padding:10rem;
+    white-space: nowrap;
+
+}
+
+.hstr-site-branding__title {font-size: 58rem; line-height: 1;}
+
+
+.site-menu-toggle {display: none;}
+.hstr-content {display: flex;}
+.hstr-content .wrapper { display: flex; flex: 1 0 auto;  height: 100%; }
+
+.hstr-main { flex:1 1 80%; padding-right: 30rem; padding-top:30rem; }
+.hstr-aside { flex:1 1 20%; padding-top:30rem; min-width: 180rem; }
+.hstr-footer { flex: 0 0 auto; min-height: 210px; padding-top:30rem; margin-top: 30rem; background-color: #eee;}
+
+.hstr-footer.loaded {border-top: 1px solid #ccc;}
+
+
+.hstr-button {
+    display:inline-block;
+    padding: 20rem 40rem;
+    color: rgba(0, 0, 0, 0.80);
+    border: 1px solid #543002;
+
+    text-decoration: none;
+    border-radius: 4px;
+
+}
+
+.hstr-button:hover {
+    background-image: linear-gradient(45deg, #30fe29 0%, #543002 80%);
+    color: #fff;
+    border-color: #fff;
+}
+
+/*--------------- Comment form --------------------*/
+
+textarea {
+    width: 100%;
+}
+
+.comment-list { margin:0; padding:0;}
+.comment-author img{float: left; border:1px solid #eee; margin-right: 10px;  border-radius:10px;}
+.fn {font-size:24px;  }
+.comments-area {font-size: 16px; }
+.comments-area a {text-decoration:none; }
+.comment-title {line-height:1; }
+.comment-title em {font-size:12px; color: red; }
+.comment-meta { font-size: 12px; color:#aaa; margin-top:-10px; }
+.comment-meta a {color: #aaa;}
+.comments-area li {list-style:none;}
+.reply { margin-top:-10px; padding:0;}
+.reply a{ color: #aaa; font-size:14px;}
+.comment {margin-top:40px;}
+.children {margin:40px 0 0 0;}
+.comments-3fields input::placeholder  {font-size:14px; }
+.comments-3fields input {width:100%; font-size:18px; padding:10px 0 10px 10px;}
+
+.comment-form {
+    width:100%;
+}
+.comment-form-comment {width: 100%;}
+.comment-form-author {width:33%; float:left; margin:0; padding-right:10px; }
+.comment-form-email {width:33%; float:left;  margin:0; padding-right:10px;}
+.comment-form-url {width:34%; float:left;  margin:0;}
+.comment-form-cookies-consent {margin-top:20px; font-size:14px;}
+.subscribe-to-comments { font-size:14px;  }
+
+.form-submit input[type="submit"] {font-size:18px; padding:20px 40px; background-color: #68c900; color:#fff; border: 1px solid rgba(170,170,170,.15); border-radius:8px;}
+.form-submit input[type="submit"]:hover {background-color: #58c900;}
+.form-submit input[type="submit"]:active {  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;}
+
+
+
+/*--------------- Small desktop version (from 1280 til 1599)--------------------*/
+
+@media all and (max-width: 1599px) {
+
+}
+
+/*--------------- Tablet version (from 500 til 1279)--------------------*/
+
+@media all and (max-width: 1279px) {
+
+}
+
+/*--------------- Mobile version (from 0 til 499)--------------------*/
+
+@media all and (max-width: 630px) {
+
+    .hstr-content .wrapper {flex-direction: column; height: 100%;}
+
+    .hstr-main {
+        padding-right: 0;
+    }
+
+    .hstr-main { flex:0 1 auto;   }
+    .hstr-aside { flex:1 1 auto;  }
+    .hstr-footer {}
+}
+
+
