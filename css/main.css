@@ -2,7 +2,6 @@
 
 /* box sizing border-box for all elements */
 *, *::before, *::after{ box-sizing: border-box; }
-
 a { text-decoration:none; color:inherit; cursor:pointer; }
 button {background-color:transparent; color:inherit; border-width:0; padding:0; cursor:pointer;}
 figure {margin:0;}
@@ -13,6 +12,7 @@ p {margin:0; }
 cite {font-style: normal;}
 fieldset {border-width:0; padding:0; margin:0;}
 
+
 input, textarea {
     color: #777;
     border: 1px solid #ccc;
@@ -20,28 +20,51 @@ input, textarea {
     padding: 3rem;
 }
 
+
 html{
     font-size: 1px; /*for using REM units*/
     height: 100%;
 }
 
+
+
 /*--------------- Start --------------------*/
 
 
+
+
 body{
-    font-family:  sans-serif;
-    font-size: 16rem;
-    font-weight: 400;
+    font-family: sans-serif;
+    font-size: 18rem;
+    font-weight: normal;
     line-height: 1.5;
     color: #333;
     margin:0;
     height: 100%;
+
+    background: no-repeat url("../background.jpg"); /* fallback */
+
+    background:  no-repeat  linear-gradient(0deg, rgba(255,255,255,1) 1%, rgba(0,0,0,0) 35%),  no-repeat url("../background.jpg");
+    background-attachment: fixed;
 }
+
+
+.oswald300{font-family: 'Oswald'; font-weight: 300; font-size: 18rem;}
+.oswald400{font-family: 'Oswald'; font-weight: 400; font-size: 20rem;}
+.oswald600{font-family: 'Oswald'; font-weight: 600; font-size: 20rem;}
+
+.roboto100{font-family: 'Roboto'; font-weight: 100;}
+.roboto400{font-family: 'Roboto'; font-weight: 400;}
+.roboto500{font-family: 'Roboto'; font-weight: 500;}
+
+.open-sans300{font-family: 'Roboto'; font-weight: 300;}
+.open-sans400{font-family: 'Roboto'; font-weight: 400;}
+.open-sans600{font-family: 'Roboto'; font-weight: 600;}
 
 h1 {font-size: 48rem;}
 h2 {font-size: 34rem;}
 h3 {font-size: 24rem;}
-p {font-size: 16rem;}
+p {font-size: 18rem;}
 
 .wrapper {margin: 0 auto; max-width: 1300px; width: 100%; padding: 0 20rem;}
 
@@ -50,15 +73,14 @@ p {font-size: 16rem;}
     display: flex;
     flex-direction: column;
     height: 100%;
-
 }
 
 .hstr-header {
-    background-color: #95c146;
+
     flex: 0 0 auto;
     text-align: center;
     padding: 24rem 0 0 0;
-    color: white;
+    color: #a23939;
 }
 
 .main-menu { margin-top: 20rem;
@@ -88,8 +110,8 @@ p {font-size: 16rem;}
 .hstr-content {display: flex;}
 .hstr-content .wrapper { display: flex; flex: 1 0 auto;  height: 100%; }
 
-.hstr-main { flex:1 1 80%; padding-right: 30rem; padding-top:30rem; }
-.hstr-aside { flex:1 1 20%; padding-top:30rem; min-width: 180rem; }
+.hstr-main { flex:1 1 80%; padding-right: 30rem; padding-top:30rem; background-color: #777777;}
+.hstr-aside { flex:1 1 20%; padding-top:30rem; min-width: 180rem; background-color:#a77777; }
 .hstr-footer { flex: 0 0 auto; min-height: 210px; padding-top:30rem; margin-top: 30rem; background-color: #eee;}
 
 .hstr-footer.loaded {border-top: 1px solid #ccc;}
@@ -150,6 +172,8 @@ textarea {
 .form-submit input[type="submit"]:active {  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;}
 
 
+
+.stickyBlock-item{border: 1px solid #aaa; height: 320px; color: #aaa;}
 
 /*--------------- Small desktop version (from 1280 til 1599)--------------------*/
 
