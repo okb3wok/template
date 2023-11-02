@@ -87,7 +87,7 @@ export function stickyHeader (scrolledCurrent = 0,
 
     }else {
       //__________________________________________
-      //  Scolling up & header is visible
+      //  Scolling up & header is midvisible
       //__________________________________________
       if ( scrolledFromTop > header.offset().top) {
 
@@ -96,8 +96,9 @@ export function stickyHeader (scrolledCurrent = 0,
           "position": "absolute"
         });
 
-        if(sticky.offset().top >= scrolledFromTop && stickyIsOn===true && sticky.offset().top > (header.offset().top + header.outerHeight())){
-          console.log("здеесь")
+        if(sticky.offset().top >= scrolledFromTop && stickyIsOn===true &&
+          sticky.offset().top > (header.offset().top + header.outerHeight())){
+
           sticky.css({
             "position": "absolute",
             "top": (header.offset().top + 30 + header.outerHeight()) + "px",
@@ -107,30 +108,29 @@ export function stickyHeader (scrolledCurrent = 0,
         }
 
       }else {
+
         //__________________________________________
-        // Scolling up & header is unvisible
+        // Scolling up & header is visible
         //__________________________________________
-        if((sticky.offset().top - header.outerHeight() - 30) > scrolledFromTop ){
-          if(scrolledFromTop < 50){
-            sticky.css({
-              'position':'static',
-              'margin-top': 0,
-              'width':'100%'
-            });
-          }else {
-            console.log(stickyWidth)
+
+        if((sticky.offset().top - header.outerHeight() - 30) > scrolledFromTop && stickyIsOn===true ){
             sticky.css({
               "position": "fixed",
               'margin-top': 0,
               "top": (30 + header.outerHeight()) + "px",
               "width": stickyWidth
             });
-          }
         }
 
-        console.log(header.offset().top + 30 + header.outerHeight());
-        header.removeAttr("style");
+        if(scrolledFromTop < 50){
 
+          sticky.css({
+            'position':'static',
+            'margin-top': 0,
+            'width':'100%'
+          });
+        }
+        header.removeAttr("style");
       }
     }
     scrolledCurrent = scrolledFromTop;
