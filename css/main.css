@@ -42,9 +42,9 @@ body{
     margin:0;
     height: 100%;
 
-    background: no-repeat url("../background.jpg"); /* fallback */
+    /*background: no-repeat url("../background.jpg"); !* fallback *!*/
 
-    background:  no-repeat  linear-gradient(0deg, rgba(255,255,255,1) 1%, rgba(0,0,0,0) 35%),  no-repeat url("../background.jpg");
+    /*background: no-repeat linear-gradient(0deg, rgba(255,255,255,1) 1%, rgba(0,0,0,0) 35%),  no-repeat top/100% url("../background.jpg");*/
     background-attachment: fixed;
 }
 
@@ -77,11 +77,38 @@ p {font-size: 18rem;}
 
 .hstr-header {
 
-    flex: 0 0 auto;
     text-align: center;
-    padding: 24rem 0 0 0;
+    padding: 50rem 50rem 0 50rem;
     color: #a23939;
+    position: fixed;
+
+    z-index: 2;
+    border-radius: 20px;
+    width:100%;
 }
+
+.hstr-header-wrapper{
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    border: 1px solid red;
+    background: white;
+}
+
+.main-navigation {
+    flex: 1 0 auto;
+}
+
+.site-menu-toggle {
+    flex: 0 0 auto;
+    border: 1px solid red;
+}
+
+.site-menu-toggle button{
+    height: 100%;
+}
+
 
 .main-menu { margin-top: 20rem;
     display: flex;
@@ -97,21 +124,28 @@ p {font-size: 18rem;}
 
 .menu-item a{
     margin-right:20rem;
-    border:1px solid white;
+    border:1px solid #bb1d1d;
     padding:10rem;
     white-space: nowrap;
 
 }
+.hstr-site-branding {
+    border: 1rem solid red;
+    flex: 0 0 auto;
 
+}
 .hstr-site-branding__title {font-size: 58rem; line-height: 1;}
 
 
-.site-menu-toggle {display: none;}
-.hstr-content {display: flex;}
-.hstr-content .wrapper { display: flex; flex: 1 0 auto;  height: 100%; }
+.header-menu--disabled {
+    display: none;
+}
 
-.hstr-main { flex:1 1 80%; padding-right: 30rem; padding-top:30rem; background-color: #777777;}
-.hstr-aside { flex:1 1 20%; padding-top:30rem; min-width: 180rem; background-color:#a77777; }
+.hstr-content {display: flex; flex: 1 0 auto; min-height: 100%; margin-top: 200rem;}
+.hstr-content .wrapper { display: flex; }
+
+.hstr-main { flex:1 1 70%; padding-right: 30rem; padding-left: 30rem; padding-top:30rem;  }
+.hstr-aside { flex:1 1 30%; padding-right: 30rem; padding-left: 30rem; padding-top:30rem; min-width: 180rem;   }
 .hstr-footer { flex: 0 0 auto; min-height: 210px; padding-top:30rem; margin-top: 30rem; background-color: #eee;}
 
 .hstr-footer.loaded {border-top: 1px solid #ccc;}
@@ -160,6 +194,7 @@ textarea {
 .comment-form {
     width:100%;
 }
+
 .comment-form-comment {width: 100%;}
 .comment-form-author {width:33%; float:left; margin:0; padding-right:10px; }
 .comment-form-email {width:33%; float:left;  margin:0; padding-right:10px;}
@@ -167,13 +202,19 @@ textarea {
 .comment-form-cookies-consent {margin-top:20px; font-size:14px;}
 .subscribe-to-comments { font-size:14px;  }
 
+
 .form-submit input[type="submit"] {font-size:18px; padding:20px 40px; background-color: #68c900; color:#fff; border: 1px solid rgba(170,170,170,.15); border-radius:8px;}
 .form-submit input[type="submit"]:hover {background-color: #58c900;}
 .form-submit input[type="submit"]:active {  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;}
 
 
+.stickyBlock-item{border: 1px solid #aaa; height: 420px; color: #aaa;}
 
-.stickyBlock-item{border: 1px solid #aaa; height: 320px; color: #aaa;}
+
+#totop {width:50px; height:50px; font-size:22px; line-height:44px; font-weight: bold; text-align:center; cursor:pointer; background-color: rgba(0, 0, 0, 0.3); border-radius:4px; color: #fff; position: fixed; right: 20px; bottom: 70px; z-index: 999; display: none;}
+#totop:hover {color:#2f07de; font-size:24px;}
+
+
 
 /*--------------- Small desktop version (from 1280 til 1599)--------------------*/
 
@@ -191,15 +232,23 @@ textarea {
 
 @media all and (max-width: 630px) {
 
+    .wrapper{padding: 0;}
     .hstr-content .wrapper {flex-direction: column; height: 100%;}
 
     .hstr-main {
         padding-right: 0;
     }
 
-    .hstr-main { flex:0 1 auto;   }
+    .hstr-main { flex:0 1 auto;  padding-right: 30rem; }
     .hstr-aside { flex:1 1 auto;  }
     .hstr-footer {}
+
+    .hstr-header {
+
+
+        padding: 30rem;
+
+    }
 }
 
 

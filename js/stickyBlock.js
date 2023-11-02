@@ -1,6 +1,6 @@
 import $ from './jQuery3.js'
 
-export function sticky (elJQSelector,
+export function stickyBlock (elJQSelector,
   offsetTop,
   offsetParentTop,
   widthStopSticky,
@@ -8,10 +8,10 @@ export function sticky (elJQSelector,
 
   let delta = offsetTop - offsetParentTop;// indent from top of parent element
   let scrollTop = $(window).scrollTop();
-  let elementWidth =$(elJQSelector).css('width');
-  let documentWidth=$(document).width();
+  let elementWidth = $(elJQSelector).css('width');
+  let documentWidth = $(document).width();
   let footerOffsetTop = $(JQSelectorBottomStopper).offset().top;
-  let stickyBlockHeight = $(elJQSelector).outerHeight();
+  let stickyBlockHeight = $(elJQSelector).height();
 
   if(documentWidth > widthStopSticky) {
 
@@ -23,8 +23,15 @@ export function sticky (elJQSelector,
           'margin-top' : 0,
           'width':elementWidth
         });
-      }else {
+      }
+      else {
         let delta2 = footerOffsetTop - offsetTop - delta - stickyBlockHeight;
+        // console.log(footerOffsetTop);
+        // console.log(offsetTop);
+        // console.log(delta);
+        // console.log(stickyBlockHeight);
+        // console.log('-----');
+        // console.log(delta2);
         $(elJQSelector).css({
           'position':'static',
           'margin-top': delta2,

@@ -1,9 +1,10 @@
 "use strict";
 import $ from './jQuery3.js'
-import {sticky} from './sticky.js'
+import {stickyBlock} from './stickyBlock.js'
+import {stickyHeader} from './stickyHeader.js'
+
 
 $(document).ready(function () {
-
 
   $(".hstr-footer").addClass("loaded");
   $(".menu-item").click(function() {
@@ -13,39 +14,61 @@ $(document).ready(function () {
   });
 
 
-  let elJQSelector = '#stickyBlock';
-  let JQSelectorBottomStopper = '.hstr-footer';//Stop sticky block before footer
-  let stickyElement = $(elJQSelector);
-  let offsetTop = stickyElement.offset().top;
-  let offsetParentTop = stickyElement.parent().offset().top;
-  let widthStopSticky = 630;//Width screen when sticky effect is off
-
-
-  sticky(elJQSelector,
-    offsetTop,
-    offsetParentTop,
-    widthStopSticky,
-    JQSelectorBottomStopper
-  );
-
-
-  $(window).scroll(function(){
-    sticky(elJQSelector,
-      offsetTop,
-      offsetParentTop,
-      widthStopSticky,
-      JQSelectorBottomStopper
-    );
-  });
-
-
+  //---------------------------------
+  //  Sticky Block
+  //---------------------------------
   $(window).resize(function(){
-    sticky(elJQSelector,
-      offsetTop,
-      offsetParentTop,
-      widthStopSticky,
-      JQSelectorBottomStopper
+    console.log('ресайз')
+    stickyBlock('#stickyBlock',
+      230,
+      200,
+      630,
+      '.hstr-footer'
     );
   });
+
+
+  //------
+  // Sticky
+  //-----
+  let scrolledPrev = 0 // Предыдущее значение скролла
+
+  $(window).scroll(function() {
+
+    scrolledPrev = stickyHeader(scrolledPrev);
+
+
+  });
+
+
+  //---------------------------------
+  //  To top
+  //---------------------------------
+  var offset = 220;
+  var duration = 300;
+
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > offset) {
+      $('#totop').fadeIn(duration);
+    } else {
+      $('#totop').fadeOut(duration);
+    }
+  });
+
+  $('#totop').click(function(event) {
+    event.preventDefault();
+    $('html, body').animate({scrollTop: 0}, duration);
+    return false;
+  });
+
+
+  //------
+  // Burger toggle
+  //-----
+  $('#menu-burger').click(function(event) {
+    $('.header-menu').toggleClass( "header-menu--disabled" );
+    $('#menu-burger').style.display='none';
+  })
+
 
 });
