@@ -96,11 +96,13 @@ export function stickyHeader (scrolledCurrent = 0,
           "position": "absolute"
         });
 
-        if(sticky.offset().top > scrolledFromTop && stickyIsOn===true){
+        if(sticky.offset().top >= scrolledFromTop && stickyIsOn===true && sticky.offset().top > (header.offset().top + header.outerHeight())){
+          console.log("здеесь")
           sticky.css({
             "position": "absolute",
             "top": (header.offset().top + 30 + header.outerHeight()) + "px",
-            "width": stickyWidth
+            "width": stickyWidth,
+            "margin-top": 0
           });
         }
 
