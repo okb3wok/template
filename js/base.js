@@ -1,7 +1,7 @@
 "use strict";
 import $ from './jQuery3.js'
 import {stickyBlock} from './stickyBlock.js'
-import {stickyHeader} from './stickyHeader.js'
+import {stickyThings} from './stickyThings.js'
 
 
 $(document).ready(function () {
@@ -35,7 +35,7 @@ $(document).ready(function () {
 
   $(window).scroll(function() {
 
-    scrolledPrev = stickyHeader(scrolledPrev);
+    scrolledPrev = stickyThings(scrolledPrev);
 
 
   });
@@ -65,9 +65,9 @@ $(document).ready(function () {
   //------
   // Burger toggle
   //-----
-  $('#menu-burger').click(function(event) {
+  $('#menu-burger').click(function() {
     $('.header-menu').toggleClass( "header-menu--disabled" );
-    $('#menu-burger').style.display='none';
+
   })
 
 

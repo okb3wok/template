@@ -49,17 +49,17 @@ body{
 }
 
 
-.oswald300{font-family: 'Oswald'; font-weight: 300; font-size: 18rem;}
-.oswald400{font-family: 'Oswald'; font-weight: 400; font-size: 20rem;}
-.oswald600{font-family: 'Oswald'; font-weight: 600; font-size: 20rem;}
+.oswald300{font-family: 'Oswald', sans-serif; font-weight: 300; font-size: 18rem;}
+.oswald400{font-family: 'Oswald', sans-serif; font-weight: 400; font-size: 20rem;}
+.oswald600{font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 20rem;}
 
-.roboto100{font-family: 'Roboto'; font-weight: 100;}
-.roboto400{font-family: 'Roboto'; font-weight: 400;}
-.roboto500{font-family: 'Roboto'; font-weight: 500;}
+.roboto100{font-family: 'Roboto', sans-serif; font-weight: 100;}
+.roboto400{font-family: 'Roboto', sans-serif; font-weight: 400;}
+.roboto500{font-family: 'Roboto', sans-serif; font-weight: 500;}
 
-.open-sans300{font-family: 'Roboto'; font-weight: 300;}
-.open-sans400{font-family: 'Roboto'; font-weight: 400;}
-.open-sans600{font-family: 'Roboto'; font-weight: 600;}
+.open-sans300{font-family: 'Roboto', sans-serif; font-weight: 300;}
+.open-sans400{font-family: 'Roboto', sans-serif; font-weight: 400;}
+.open-sans600{font-family: 'Roboto', sans-serif; font-weight: 600;}
 
 h1 {font-size: 48rem;}
 h2 {font-size: 34rem;}
@@ -81,7 +81,7 @@ p {font-size: 18rem;}
     padding: 50rem 50rem 0 50rem;
     color: #a23939;
     position: fixed;
-
+    background: #ffffff;
     z-index: 2;
     border-radius: 20px;
     width:100%;
@@ -94,15 +94,16 @@ p {font-size: 18rem;}
     display: flex;
     border: 1px solid red;
     background: white;
+    border-radius: 20px;
 }
 
 .main-navigation {
-    flex: 1 0 auto;
+    flex: 1 1 auto;
 }
 
 .site-menu-toggle {
     flex: 0 0 auto;
-    border: 1px solid red;
+
 }
 
 .site-menu-toggle button{
@@ -130,9 +131,7 @@ p {font-size: 18rem;}
 
 }
 .hstr-site-branding {
-    border: 1rem solid red;
     flex: 0 0 auto;
-
 }
 .hstr-site-branding__title {font-size: 58rem; line-height: 1;}
 
