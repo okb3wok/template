@@ -26,12 +26,6 @@ export function stickyBlock (elJQSelector,
       }
       else {
         let delta2 = footerOffsetTop - offsetTop - delta - stickyBlockHeight;
-        // console.log(footerOffsetTop);
-        // console.log(offsetTop);
-        // console.log(delta);
-        // console.log(stickyBlockHeight);
-        // console.log('-----');
-        // console.log(delta2);
         $(elJQSelector).css({
           'position':'static',
           'margin-top': delta2,

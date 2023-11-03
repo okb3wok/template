@@ -1,6 +1,5 @@
 "use strict";
 import $ from './jQuery3.js'
-import {stickyBlock} from './stickyBlock.js'
 import {stickyThings} from './stickyThings.js'
 
 
@@ -14,18 +13,6 @@ $(document).ready(function () {
   });
 
 
-  //---------------------------------
-  //  Sticky Block
-  //---------------------------------
-  $(window).resize(function(){
-    console.log('ресайз')
-    stickyBlock('#stickyBlock',
-      230,
-      200,
-      630,
-      '.hstr-footer'
-    );
-  });
 
 
   //------
@@ -34,11 +21,17 @@ $(document).ready(function () {
   let scrolledPrev = 0 // Предыдущее значение скролла
 
   $(window).scroll(function() {
-
     scrolledPrev = stickyThings(scrolledPrev);
-
-
   });
+
+
+  //---------------------------------
+  //  Sticky Block
+  //---------------------------------
+  $(window).resize(function(){
+    scrolledPrev = stickyThings(scrolledPrev);
+  });
+
 
 
   //---------------------------------
